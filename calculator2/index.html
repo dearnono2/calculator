@@ -3,36 +3,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Calculator2</title>
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <script defer src="script.js"></script> -->
   </head>
   <body>
     <div class="calculator">
       <div class="inner">
-        <div class="screen">
-          <p></p>
-        </div>
+        <textarea id="screen" readonly></textarea>
         <div class="button-wrapper">
-          <button type="button" id="allClear" class="operator" value="ac">AC</button>
-          <button type="button" id="delete" class="operator" value="de">DE</button>
-          <button type="button" id="decimal" class="operator" value=".">.</button>
-          <button type="button" id="divide" class="operator" value="/">÷</button>
-          <button type="button" class="num" value="7">7</button>
-          <button type="button" class="num" value="8">8</button>
-          <button type="button" class="num" value="9">9</button>
-          <button type="button" id="multiply" class="operator" value="*">x</button>
-          <button type="button" class="num" value="4">4</button>
-          <button type="button" class="num" value="5">5</button>
-          <button type="button" class="num" value="6">6</button>
-          <button type="button" id="minus" class="operator" value="-">-</button>
-          <button type="button" class="num" value="1">1</button>
-          <button type="button" class="num" value="2">2</button>
-          <button type="button" class="num" value="3">3</button>
-          <button type="button" id="plus" class="operator" value="+">+</button>
-          <button type="button" class="num" value="00">00</button>
-          <button type="button" class="num" value="0">0</button>
-          <button type="button" id="equal" class="operator" value="=">=</button>
+          <!-- first line -->
+          <button type="button" id="clear" value="" onclick="clearInput(document.getElementById('clear').value)"">AC</button>
+          <button type="button" id="zero" value="0" onclick="takeValue(document.getElementById('zero').value)">0</button>
+          <button type="button" id="doubleZero" value="00" onclick="takeValue(document.getElementById('doubleZero').value)">00</button>
+          <button type="button" id="decimal" value="." onclick="takeValue(document.getElementById('decimal').value)">.</button>
+          <!-- second line -->
+          <button type="button" id="seven" value="7" onclick="takeValue(document.getElementById('seven').value)">7</button>
+          <button type="button" id="eight" value="8" onclick="takeValue(document.getElementById('eight').value)">8</button>
+          <button type="button" id="nine" value="9" onclick="takeValue(document.getElementById('nine').value)">9</button>
+          <button type="button" id="plus" value="+" onclick="takeValue(document.getElementById('plus').value)">+</button>
+          <!-- third line -->
+          <button type="button" id="four" value="4" onclick="takeValue(document.getElementById('four').value)">4</button>
+          <button type="button" id="five" value="5" onclick="takeValue(document.getElementById('five').value)">5</button>
+          <button type="button" id="six" value="6" onclick="takeValue(document.getElementById('six').value)">6</button>
+          <button type="button" id="minus" value="-" onclick="takeValue(document.getElementById('minus').value)">-</button>
+          <!-- fourth line -->
+          <button type="button" id="one" value="1" onclick="takeValue(document.getElementById('one').value)">1</button>
+          <button type="button" id="two" value="2" onclick="takeValue(document.getElementById('two').value)">2</button>
+          <button type="button" id="three" value="3" onclick="takeValue(document.getElementById('three').value)">3</button>
+          <button type="button" id="times" value="*" onclick="takeValue(document.getElementById('times').value)">x</button>
+          <!-- fifth line -->
+          <button type="button" id="equal" value="=" onclick="calculateResult()">=</button>
+          <button type="button" id="divide" value="/" onclick="takeValue(document.getElementById('divide').value)">/</button>
+
         </div>
       </div>
     </div>

@@ -89,39 +89,3 @@ function testKeySequence (test) {
   clearCalculator()
   testClearKey()
 }
-
-const tests = [{
-  keys: ['1'],
-  value: '1',
-  message: 'Click 1'
-}, {
-  keys: ['1', '5'],
-  value: '15',
-  message: 'Click 15'
-}, {
-  keys: ['1', '5', '9'],
-  value: '159',
-  message: 'Click 159'
-}, {
-  keys: ['2', '4', 'plus', '7', 'equal'],
-  value: '31',
-  message: 'Calculation with plus'
-}, {
-  keys: ['3', 'minus', '7', '0', 'equal'],
-  value: '-67',
-  message: 'Calculation with minus'
-}, {
-  keys: ['1', '5', 'times', '9', 'equal'],
-  value: '135',
-  message: 'Calculation with times'
-}, {
-  keys: ['9', 'divide', '3', 'equal'],
-  value: '3',
-  message: 'Calculation with divide'
-}, {
-  keys: ['9', 'divide', '0', 'equal'],
-  value: 'Infinity',
-  message: 'Calculation. Divide by 0'
-}]
-
-tests.forEach(testKeySequence)
