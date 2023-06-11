@@ -175,6 +175,7 @@ body {
   background-color: var(--grey-900);
   color: var(--grey-050);
   width: 16.25rem;
+  height: 3.5rem;
   padding: 0.75rem 1rem;
   text-align: right;
   font-size: 1.44rem;
@@ -189,55 +190,62 @@ body {
 .container .calculator .calculator__keys > button {
   border: 0;
 }
-.container .calculator .calculator__keys .one {
+.container .calculator .calculator__keys [data-key="1"] {
   grid-area: one;
 }
-.container .calculator .calculator__keys .two {
+.container .calculator .calculator__keys [data-key="2"] {
   grid-area: two;
 }
-.container .calculator .calculator__keys .three {
+.container .calculator .calculator__keys [data-key="3"] {
   grid-area: three;
 }
-.container .calculator .calculator__keys .four {
+.container .calculator .calculator__keys [data-key="4"] {
   grid-area: four;
 }
-.container .calculator .calculator__keys .five {
+.container .calculator .calculator__keys [data-key="5"] {
   grid-area: five;
 }
-.container .calculator .calculator__keys .six {
+.container .calculator .calculator__keys [data-key="6"] {
   grid-area: six;
 }
-.container .calculator .calculator__keys .seven {
+.container .calculator .calculator__keys [data-key="7"] {
   grid-area: seven;
 }
-.container .calculator .calculator__keys .nine {
+.container .calculator .calculator__keys [data-key="8"] {
+  grid-area: eight;
+}
+.container .calculator .calculator__keys [data-key="9"] {
   grid-area: nine;
 }
-.container .calculator .calculator__keys .zero {
+.container .calculator .calculator__keys [data-key="0"] {
   grid-area: zero;
 }
-.container .calculator .calculator__keys .decimal {
+.container .calculator .calculator__keys [data-type=demical] {
   grid-area: decimal;
 }
-.container .calculator .calculator__keys .clear {
+.container .calculator .calculator__keys [data-type=clear] {
   grid-area: clear;
+  background: #fff;
 }
-.container .calculator .calculator__keys .equal {
+.container .calculator .calculator__keys [data-type=clear]:active {
+  background: var(--grey-200);
+}
+.container .calculator .calculator__keys [data-type=equal] {
   grid-area: equal;
   background-color: var(--orange-400);
 }
-.container .calculator .calculator__keys .equal:active {
+.container .calculator .calculator__keys [data-type=equal]:active {
   background-color: var(--orange-500);
 }
-.container .calculator .calculator__keys .operator {
+.container .calculator .calculator__keys [data-type=operator] {
   background: var(--grey-100);
 }
-.container .calculator .calculator__keys .operator:active {
+.container .calculator .calculator__keys [data-type=operator]:active {
   background: var(--grey-200);
 }
-.container .calculator .calculator__keys .number {
+.container .calculator .calculator__keys [data-type=number] {
   background: #fff;
 }
-.container .calculator .calculator__keys .number:active {
+.container .calculator .calculator__keys [data-type=number]:active {
   background: var(--grey-200);
 }/*# sourceMappingURL=style.css.map */

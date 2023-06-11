@@ -56,6 +56,7 @@ body {
       background-color: var(--grey-900);
       color: var(--grey-050);
       width: 16.25rem;
+      height: 3.5rem;
       padding: 0.75rem 1rem;
       text-align: right;
       font-size: calc(1rem * 1.2 * 1.2);
@@ -72,57 +73,64 @@ body {
       "one two three equal"
       "zero decimal clear equal"
       ;
-      // 반복문 가능하지만 패스
       > button {
         border: 0;
       }
-      .one {
+      // 반복문 가능하지만 패스
+      [data-key="1"] {
         grid-area: one;
       }
-      .two {
+      [data-key="2"] {
         grid-area: two;
       }
-      .three {
+      [data-key="3"] {
         grid-area: three;
       }
-      .four {
+      [data-key="4"] {
         grid-area: four;
       }
-      .five {
+      [data-key="5"] {
         grid-area: five;
       }
-      .six {
+      [data-key="6"] {
         grid-area: six;
       }
-      .seven {
+      [data-key="7"] {
         grid-area: seven;
       }
-      .nine {
+      [data-key="8"] {
+        grid-area: eight;
+      }
+      [data-key="9"] {
         grid-area: nine;
       }
-      .zero {
+      [data-key="0"] {
         grid-area: zero;
       }
-      .decimal {
+      [data-type="demical"] {
         grid-area: decimal;
       }
-      .clear {
+      [data-type="clear"] {
         grid-area: clear;
+        background: #fff;
+        &:active {
+          background: var(--grey-200);
+        }
       }
-      .equal {
+      [data-type="equal"] {
         grid-area: equal;
         background-color: var(--orange-400);
         &:active {
           background-color: var(--orange-500);
         }
       }
-      .operator {
+      [data-type="operator"] {
         background: var(--grey-100);
         &:active {
           background: var(--grey-200);
         }
       }
-      .number {
+      [data-type="number"] {
         background: #fff;
         &:active {
           background: var(--grey-200);

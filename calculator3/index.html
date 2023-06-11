@@ -12,23 +12,24 @@
     <div class="calculator">
       <div class="calculator__display">0</div>
       <div class="calculator__keys">
-        <button class="operator plus">+</button>
-        <button class="operator minus">-</button>
-        <button class="operator times">&times;</button> <!-- x를 곱하기로 작성하면 스크린리더가 곱하기 부호가 아닌 알파벳 x 로 읽을 수 있다.  -->
-        <button class="operator divide">÷</button>
-        <button class="number one">1</button>
-        <button class="number two">2</button>
-        <button class="number three">3</button>
-        <button class="number four">4</button>
-        <button class="number five">5</button>
-        <button class="number six">6</button>
-        <button class="number seven">7</button>
-        <button class="number eight">8</button>
-        <button class="number nine">9</button>
-        <button class="number zero">0</button>
-        <button class="number decimal">.</button>
-        <button class="number clear">C</button>
-        <button class="equal"> = </button>
+        <button data-key="plus" data-type="operator">+</button>
+        <button data-key="minus" data-type="operator">-</button>
+        <!-- x를 곱하기 용으로 작성하면 스크린리더가 곱하기 부호가 아닌 알파벳 x 로 읽을 수 있다.  -->
+        <button data-key="times" data-type="operator">&times;</button>
+        <button data-key="divide" data-type="operator">÷</button>
+        <button data-key="1" data-type="number">1</button>
+        <button data-key="2" data-type="number">2</button>
+        <button data-key="3" data-type="number">3</button>
+        <button data-key="4" data-type="number">4</button>
+        <button data-key="5" data-type="number">5</button>
+        <button data-key="6" data-type="number">6</button>
+        <button data-key="7" data-type="number">7</button>
+        <button data-key="8" data-type="number">8</button>
+        <button data-key="9" data-type="number">9</button>
+        <button data-key="0" data-type="number">0</button>
+        <button class="decimal" data-type="number">.</button>
+        <button class="clear" data-type="clear">C</button>
+        <button data-key="equal" data-type="equal">=</button>
       </div>
     </div>
   </div>
