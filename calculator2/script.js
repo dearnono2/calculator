@@ -42,7 +42,6 @@ btns.forEach((v, i) => {
     } else {
       takeValue(target); // 클릭한 값들을 (문자열)더해주는 함수.
     }
-
   });
 });
 
