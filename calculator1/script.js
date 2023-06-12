@@ -1,28 +1,28 @@
 const btns = document.querySelectorAll("button");
 let screenText = document.querySelector(".screen p");
 let screenTextValue = document.querySelector(".screen p").value;
-screenTextValue = '';
+screenTextValue = "";
 
-function takeValue(v) {
-  let a = screenTextValue += v;
-  let b = screenText.innerHTML = a;
-  return b;
-}
-
-function clearInput(v) {
-  if(v === 'ac') {
-    const ac = screenTextValue = '';
-    return screenText.innerHTML = ac;
+function calculator(v) {
+  if (v === "ac") {
+    // 클릭하면 값이 빈값이 되게 하는 코드
+    screenTextValue = "";
+    screenText.innerHTML = screenTextValue;
+  } else if (v === "de") {
+    // 클릭하면 값을 한칸씩 지워주는 코드
+    screenTextValue = screenTextValue.slice(0, -1);
+    screenText.innerHTML = screenTextValue;
+  } else if (v === "=") {
+    // let result = new Function(a, b)
+    let result = eval(screenTextValue); // eval 함수는 보안 문제로 지양해야 한다.
+    screenTextValue = result;
+    screenText.innerHTML = result;
+    console.log(result);
   } else {
-    const de = screenTextValue.slice(0, screenTextValue.length - 1);
-    return screenText.innerHTML = de;
+    // 클릭한 값들을 (문자열)더해주는 코드.
+    let sumValue = (screenTextValue += v);
+    let b = (screenText.innerHTML = sumValue);
   }
-}
-
-function calculatorResult(v) {
-  // let result = new Function(a, b)
-  let result = eval(screenTextValue); // eval함수는 보안 문제로 지양해야 한다.
-  screenText.innerHTML = result;
 }
 
 btns.forEach((v, i) => {
@@ -30,23 +30,6 @@ btns.forEach((v, i) => {
     const target = e.target.value; // 클릭한 계산기 버튼의 값
     console.log(target);
 
-    if(target === 'ac' || target === 'de') {
-      console.log('clear');
-      clearInput(target); // 클릭하면 값이 빈값이 되게 하는 함수
-    } else if (target === '=') {
-      calculatorResult();
-    } else {
-      takeValue(target); // 클릭한 값들을 (문자열)더해주는 함수.
-    }
+    calculator(target);
   });
 });
-
-// console.log(document.querySelector(".screen p"));
-
-
-
-/*
-1.우선 비효율적이더라도 이해하기 쉽게 요소 하나하나 개별적으로 작동되게 하기
-2.공통되는 것들끼리 묶기
-3.효율적으로 바꿔보기
-*/

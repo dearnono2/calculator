@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js Calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="screen">
+      <input type="text" placeholder="숫자를 입력하세요" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  >
+    </div>
+    <div class="button-box">
+      <!-- first line -->
+      <div class="first-line">
+        <button class="ac">AC</button>
+        <button class="de">DE</button>
+        <button class="dot">.</button>
+        <button class="division">/</button>
+      </div>
+      <!-- second line -->
+      <div class="second-line">
+        <button class="seven">7</button>
+        <button class="eight">8</button>
+        <button class="nine">9</button>
+        <button class="multiply">x</button>
+      </div>
+      <!-- third line -->
+      <div class="third-line">
+        <button class="four">4</button>
+        <button class="five">5</button>
+        <button class="six">6</button>
+        <button class="minus">-</button>
+      </div>
+      <!-- fourth line -->
+      <div class="fourth-line">
+        <button class="one">1</button>
+        <button class="two">2</button>
+        <button class="three">3</button>
+        <button class="plus">+</button>
+      </div>
+      <!-- fifth line -->
+      <div class="fifth-line">
+        <button class="double-zero">00</button>
+        <button class="zero">0</button>
+        <button class="equal">=</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
