@@ -50,3 +50,5 @@ btn.forEach((v, i) => {
     screen.innerText = result;
   })
 })
+
+// 오류: result로 계산 결과 값이 나온 후, 곧바로 연산자를 클릭하면 오류가 뜨는 문제 해결 필요!
