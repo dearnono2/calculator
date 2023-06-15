@@ -1,7 +1,6 @@
 const screen = document.querySelector('.screen p');
 // let screenValue = screen.textContent;
 let result = '';
-let carculation = '';
 
 const btn = document.querySelectorAll('button');
 
@@ -15,8 +14,7 @@ btn.forEach((v, i) => {
     // 숫자 버튼 클릭 시
     if (targetData === 'number') {
       result += targetValue;
-      carculation += targetValue;
-      console.log(result);
+
     }
     // 연산자 버튼 클릭 시
     if (targetData === 'operator') {
@@ -45,7 +43,7 @@ btn.forEach((v, i) => {
       // Number(carculation);
     }
 
-    console.log(carculation);
+
 
     screen.innerText = result;
   })
