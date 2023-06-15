@@ -37,8 +37,8 @@ btn.forEach((v, i) => {
       if (prevValue[0] === undefined) {
         result;
 
-        // 연산자 두번 연속으로 클릭할 경우
-      } else if (reg.test(result.slice(-2)) === true) {
+        // 연산자 두번 연속으로 클릭할 경우 (연산자 클릭 후 두번째 값이 없는 경우)
+      } else if (nextValue[0] === undefined && operator[1] !== undefined) {
         result = result.slice(0, -1) + targetValue;
       } else {
         // result += targetValue;
@@ -71,7 +71,7 @@ btn.forEach((v, i) => {
     // 결과 버튼 클릭 시
     if(targetData === 'equal') {
       // operator를 어떻게 하면 문자열이 아닌 상태로 꺼내올까? eval 함수를 안쓰고 싶다
-      // switch 조건문으로 +,-,*,/ 의 경우를 모두 만들면 코드가 길어지는데..
+      // switch 조건문으로 +,-,*,/ 의 경우를 모두 만들면 코드가 길어지는데
       result = eval(prevValue.join('') + operator + Number(nextValue.join('')))
       
       prevValue = [];
