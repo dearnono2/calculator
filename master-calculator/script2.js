@@ -5,6 +5,8 @@ let prevValue;
 let nextValue;
 let currentValue;
 
+let stringValue = "";
+
 btn.forEach((v, i) => {
   v.addEventListener("click", (e) => {
     let type = e.target.dataset.type;
