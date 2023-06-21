@@ -1,8 +1,8 @@
 const btn = document.querySelectorAll("button");
 const screen = document.querySelector(".screen p");
 
-let prevValue = "";
-let nextValue = "";
+let prevValue;
+let nextValue;
 let currentValue;
 
 btn.forEach((v, i) => {
@@ -42,27 +42,22 @@ btn.forEach((v, i) => {
 function number(v) {
   if (currentValue === undefined) {
     currentValue = "";
-  }
-  // demical
-  // demical이 2번 이상 쓰이고 또 demical이 입력된 경우?
-  if (currentValue.split(".").length > 1 && v === ".") {
-    // let regExp = /./g;
-    // v = "";
-    // console.log("true 입니다.");
-    console.log("두번째 demical 입니다.");
+  } else {
+    // 입력된 앞의 값이 연산자라면 nextvalue에 값을 담는다.
+    let checkDoubleOperator = currentValue[currentValue.length - 1];
 
-    // currentValue = currentValue.substring(0, currentValue.length - 1);
-    // currentValue = currentValue.replace(".", "");
-    // currentValue = currentValue.replace(/.(.*)./, ".$1");
-
-    // currentValue = currentValue.slice(0, -1);
-
-    // if (v === ".") {
-    //   currentValue = currentValue.slice(0, -1);
-    // }
+    if (
+      checkDoubleOperator === "+" ||
+      checkDoubleOperator === "-" ||
+      checkDoubleOperator === "*" ||
+      checkDoubleOperator === "/"
+    ) {
+      console.log("앞에 연산자임.");
+      nextValue = "";
+      nextValue += v;
+    }
   }
 
-  // console.log(v);
   currentValue += v;
 }
 
@@ -78,26 +73,44 @@ function operator(v) {
 
     prevValue = currentValue;
 
-    // 만약 이전 값이 있다면?
-    if (prevValue !== undefined) {
-      console.log("prev값 있음");
-      // 만약 연산자를 연속 입력 한다면?
-      if (
-        checkDoubleOperator === "+" ||
-        checkDoubleOperator === "-" ||
-        checkDoubleOperator === "*" ||
-        checkDoubleOperator === "/"
-      ) {
-        currentValue = currentValue.replace(checkDoubleOperator, v);
-        console.log("연속임");
-      } else {
-        currentValue = prevValue + v;
+    // 만약 연산자를 연속 입력 한다면?
+    if (
+      checkDoubleOperator === "+" ||
+      checkDoubleOperator === "-" ||
+      checkDoubleOperator === "*" ||
+      checkDoubleOperator === "/"
+    ) {
+      currentValue = currentValue.replace(checkDoubleOperator, v);
+      console.log("연속임");
+    } else {
+      currentValue = prevValue + v;
+    }
+
+    // 만약 이전 값, 다음 값이 있다면?
+    if (prevValue !== undefined && nextValue !== undefined) {
+      console.log("prev, next 둘 다 값 있음.");
+      switch (v) {
+        case "+":
+          prevValue = prevValue + nextValue;
+          break;
+        case "-":
+          prevValue = prevValue - nextValue;
+          break;
+        case "*":
+          prevValue = prevValue * nextValue;
+          break;
+        case "/":
+          prevValue = prevValue / nextValue;
+          break;
       }
+      console.log(prevValue);
+      currentValue = eval(prevValue);
+      // nextValue = undefined;
 
       // 이전 값이 없다면?
     } else {
-      currentValue += v;
-      console.log("prev값 없음");
+      // currentValue += v;
+      console.log("값 없음");
     }
 
     // console.log(currentValue);
@@ -121,8 +134,11 @@ function erase(v) {
 // 결과 함수
 function result(v) {
   if (prevValue !== undefined) {
-    prevValue = eval(currentValue);
-    currentValue = prevValue + "";
+    // prevValue = eval(currentValue);
+    // currentValue = prevValue + "";
+    operator();
+    // currentValue = prevValue;
+    console.log(prevValue);
   }
   // console.log(prevValue);
 }
@@ -136,20 +152,3 @@ function result(v) {
 // 만약 nextValue값이 없다면? => 연산 안함.
 // 연산자를 연속으로 두번 입력하면? => 가장 최근에 입력한 연산자로 바꿔준다.
 // 만약 prevValue에 값이 있고 연산자가 입력된다면? 그 후에 입력되는 숫자는 nextValue에 저장
-
-// else {
-//   switch (v) {
-//     case "+":
-//       prevValue = currentValue + nextValue;
-//       break;
-//     case "-":
-//       prevValue = currentValue - nextValue;
-//       break;
-//     case "*":
-//       prevValue = currentValue * nextValue;
-//       break;
-//     case "/":
-//       prevValue = currentValue / nextValue;
-//       break;
-//   }
-// }
