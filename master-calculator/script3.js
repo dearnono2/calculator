@@ -4,7 +4,7 @@ const screen = document.querySelector(".screen p");
 let prevValue = "";
 let nextValue = "";
 let currentValue;
-let demical = false;
+let decimal = false;
 
 btn.forEach((v, i) => {
   v.addEventListener("click", (e) => {
@@ -45,8 +45,8 @@ function number(v) {
   //   currentValue = "";
   // }
 
-  if(v === ".") {
-    if(!decimal) {
+  if (v === ".") {
+    if (!decimal) {
       currentValue += v;
       decimal = true;
     }
@@ -58,8 +58,6 @@ function number(v) {
     currentValue += v;
     // decimal = false;
   }
-
-  
 }
 
 // 연산자 입력 함수
@@ -98,7 +96,7 @@ function operator(v) {
 
     // console.log(currentValue);
   }
-  demical = false;
+  decimal = false;
 }
 
 // 지우기, clear 전체 지우기 함수
@@ -113,7 +111,7 @@ function erase(v) {
   if (v === "ac") {
     currentValue = undefined;
   }
-  demical = false;
+  decimal = false;
 }
 
 // 결과 함수
@@ -122,6 +120,6 @@ function result(v) {
     prevValue = eval(currentValue);
     currentValue = prevValue + "";
   }
-  demical = false;
+  decimal = false;
   // console.log(prevValue);
 }
