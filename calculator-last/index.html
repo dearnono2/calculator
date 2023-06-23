@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator1</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="inner">
+        <div class="screen">
+          <p></p>
+        </div>
+        <div class="button-wrapper">
+          <!-- line 1 -->
+          <button type="button" id="allClear" data-type="clear" value="ac">
+            AC
+          </button>
+          <button type="button" id="delete" data-type="delete" value="de">
+            DE
+          </button>
+          <button type="button" id="decimal" data-type="number" value=".">
+            .
+          </button>
+          <button type="button" id="divide" data-type="operator" value="/">
+            ÷
+          </button>
+          <!-- line 2 -->
+          <button type="button" data-type="number" value="7">7</button>
+          <button type="button" data-type="number" value="8">8</button>
+          <button type="button" data-type="number" value="9">9</button>
+          <button type="button" id="multiply" data-type="operator" value="*">
+            x
+          </button>
+          <!-- line 3 -->
+          <button type="button" data-type="number" value="4">4</button>
+          <button type="button" data-type="number" value="5">5</button>
+          <button type="button" data-type="number" value="6">6</button>
+          <button type="button" id="minus" data-type="operator" value="-">
+            -
+          </button>
+          <!-- line 4 -->
+          <button type="button" data-type="number" value="1">1</button>
+          <button type="button" data-type="number" value="2">2</button>
+          <button type="button" data-type="number" value="3">3</button>
+          <button type="button" id="plus" data-type="operator" value="+">
+            +
+          </button>
+          <!-- line 5 -->
+          <button type="button" data-type="number" value="00">00</button>
+          <button type="button" data-type="number" value="0">0</button>
+          <button type="button" id="equal" data-type="equal" value="=">
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- js -->
+    <script src="script.js"></script>
+  </body>
+</html>
