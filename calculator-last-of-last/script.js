@@ -82,3 +82,5 @@ equal.addEventListener("click", (e) => {
   console.log(e.target.value);
   screen.textContent = eval(screen.textContent);
 });
+
+// decimal, 연산자 연속입력 막기 미완성
